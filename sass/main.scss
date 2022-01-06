@@ -1,0 +1,29 @@
+// ------------Variables--------------
+
+@import "utils/_variables.scss";
+
+// ------------Reset styles-------------
+
+@import "utils/_reset.scss";
+
+// ------------Header style-----------
+
+@import "components/_header.scss";
+@import "components/_logo.scss";
+
+// ------------Page (<main>) style-------------
+
+@import "components/_body-style.scss";
+@import "components/_social-list.scss";
+
+// ------------Modal window style---------------
+
+@import "components/_modal-window.scss";
+
+// ------------Footer style----------------
+
+@import "components/_footer.scss";
+
+// -------------Portfolio style-------------
+
+@import "components/_portfolio.scss";

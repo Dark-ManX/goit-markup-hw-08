@@ -1,0 +1,21 @@
+@mixin font-style($ff, $fw, $fs, $lh, $ls, $color) {
+  font-family: $ff;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  color: $color;
+}
+
+.logo {
+  @include font-style($secondary-font, 700, 26px, 1.19, 0.03, #000);
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+}
+
+.web {
+  color: $interactive-color;
+}

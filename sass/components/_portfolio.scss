@@ -1,0 +1,145 @@
+@mixin button-text($fw, $fs, $lh, $ls, $ai, $ta, $color) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  align-items: $ai;
+  text-align: $ta;
+  color: $color;
+}
+
+// -------------Portfolio filter-------------
+
+.portfolio-nav {
+  &__buttons-list {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__buttons-item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &__button {
+    @include button-text(
+      500,
+      16px,
+      1.62,
+      0.03em,
+      center,
+      center,
+      $primary-color
+    );
+    padding: 6px 22px;
+    min-width: auto;
+    background-color: $not-active-color;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+      background-color: $interactive-color;
+      color: $header-color;
+    }
+  }
+}
+
+// -------------------Portfolio grid-------------
+
+.portfolio {
+  &__list {
+    margin-left: -30px;
+    margin-top: -30px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-basis: calc(100% / 3 - 30px);
+    margin-top: 30px;
+    margin-left: 30px;
+    background: $header-color;
+  }
+
+  &__link {
+    color: inherit;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      display: inline-block;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+  }
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &--is-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    transform: translateY(101%);
+    background-color: rgba(33, 150, 243, 0.9);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .portfolio__text {
+      position: absolute;
+      font-size: 18px;
+      line-height: 1.55;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin: 63px 24px;
+    }
+    .portfolio__link:hover &,
+    .portfolio__link:focus & {
+      transform: translateY(0%);
+    }
+  }
+
+  &-jpg {
+    display: block;
+    width: auto;
+  }
+  &-description {
+    border: 1px solid #eeeeee;
+    padding: 20px 24px;
+    border-top: none;
+
+    &__header {
+      @include button-text(
+        700,
+        18px,
+        2,
+        0.03em,
+        none,
+        flex-start,
+        $primary-color
+      );
+      margin-bottom: 4px;
+    }
+    &__text {
+      @include button-text(
+        400,
+        16px,
+        1.87,
+        0.03em,
+        none,
+        flex-start,
+        $secondary-color
+      );
+    }
+  }
+}

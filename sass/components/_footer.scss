@@ -1,0 +1,129 @@
+@mixin font-style($fw, $fs, $lh, $tt) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  text-transform: $tt;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+.footer {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $background-color;
+  padding: 60px 0;
+
+  &__address-container {
+    margin-right: 70px;
+  }
+
+  &__logo {
+    color: white;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  &-title {
+    color: $header-color;
+    @include font-style(700, 14px, 1.17, uppercase);
+  }
+
+  &-social-item__link {
+    background-color: rgba(#fff, 0.1);
+  }
+}
+
+.footer-join__social-list {
+  margin-top: 20px;
+}
+
+.footer__content {
+  display: flex;
+  align-items: baseline;
+  letter-spacing: 0.03em;
+}
+.address {
+  color: $header-color;
+  font-style: normal;
+
+  &__location {
+    margin-bottom: 9px;
+    @include font-style(400, 14px, 1.71, none);
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.6);
+    @include font-style(400, 14px, 1.71, none);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: $interactive-color;
+    }
+
+    &:focus {
+      outline: 1px solid $header-color;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+  }
+}
+
+.social-link {
+  .footer-social__icon {
+    fill: $header-color;
+  }
+}
+
+.join-container__join-social {
+  margin-top: 20px;
+}
+
+.form-request {
+  margin-left: auto;
+  @include size(570px, 86px);
+
+  &__request {
+    @include font-style(700, 14px, 1.14, uppercase);
+    color: $header-color;
+  }
+}
+
+.footer__form {
+  margin-bottom: 20px;
+}
+
+.footer-box {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+
+  &__input {
+    @include size(358px, 50px);
+    margin-right: 12px;
+    background-color: $background-color;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    &:focus {
+      outline: 1px solid $header-color;
+    }
+  }
+  .footer-submit {
+    &__icon {
+      margin-left: 10px;
+      fill: #fff;
+    }
+    &__text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
