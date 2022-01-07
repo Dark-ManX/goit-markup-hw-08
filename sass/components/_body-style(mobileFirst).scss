@@ -9,21 +9,21 @@
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/background-image/bcg-img.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
-
-  @media screen and (min-width: 480px) {
-    width: 480px;
-  }
+  width: 480px;
+  height: 400px;
 
   @media screen and (min-width: 768px) {
     width: 768px;
   }
-
   @media screen and (min-width: 1200px) {
     width: 1600px;
+    height: 600px;
   }
+
   &__button {
     margin-top: 30px;
   }
@@ -39,7 +39,11 @@
 }
 
 .hero-title {
-  @include title(900, 44px, 1.5, 0.06, uppercase, $header-color);
+  @include title(900, 24px, 1.61, 0.06em, uppercase, $header-color);
+
+  @media screen and (min-width: 1200px) {
+    @include title(900, 44px, 1.5, 0.06, uppercase, $header-color);
+  }
 }
 
 @import "./_button.scss";
