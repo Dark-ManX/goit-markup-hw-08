@@ -1,9 +1,3 @@
-body {
-  font-family: $primary-font, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  color: $primary-color;
-}
 h1,
 h2,
 h3,
@@ -20,14 +14,4 @@ li {
 }
 a {
   text-decoration: none;
-}
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-.container {
-  padding: 0 15px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
 }

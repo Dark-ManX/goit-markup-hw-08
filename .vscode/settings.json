@@ -1,0 +1,21 @@
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/CSS"
+        },
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/CSS"
+        }
+    ],
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 10 versions"
+    ],
+    "liveSassCompile.settings.generateMap": true,
+    "liveServer.settings.port": 5100,
+    "liveSassCompile.settings.excludeList": [],
+}

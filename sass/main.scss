@@ -2,9 +2,10 @@
 
 @import "utils/_variables.scss";
 
-// ------------Reset styles-------------
+// ------------Reset and base styles-------------
 
 @import "utils/_reset.scss";
+@import "./base/_base.scss";
 
 // ------------Header style-----------
 
@@ -13,7 +14,7 @@
 
 // ------------Page (<main>) style-------------
 
-@import "components/_body-style.scss";
+@import "components/_body-style(mobileFirst).scss";
 @import "components/_social-list.scss";
 
 // ------------Modal window style---------------

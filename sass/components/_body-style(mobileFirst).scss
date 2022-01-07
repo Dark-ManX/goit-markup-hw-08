@@ -1,0 +1,87 @@
+// ----------Hero section---------------
+.hero {
+  padding: 118px 0;
+  background-color: $background-color;
+  text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/background-image/bcg-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1600px;
+  }
+  &__button {
+    margin-top: 30px;
+  }
+}
+
+@mixin title($fw, $fs, $lh, $ls, $tt, $color) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  text-transform: $tt;
+  color: $color;
+}
+
+.hero-title {
+  @include title(900, 44px, 1.5, 0.06, uppercase, $header-color);
+}
+
+@import "./_button.scss";
+
+.hero__button {
+  margin-top: 30px;
+}
+
+// --------------Benefits------------
+
+.benefits--visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.benefits__list {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 270px;
+    display: flex;
+  }
+}
+
+.benefits-item {
+  width: 450px;
+  @media screen and (min-width: 768px) {
+    width: calc((100%-2 * 30px) / 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100%-4 * 30px) / 2);
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
