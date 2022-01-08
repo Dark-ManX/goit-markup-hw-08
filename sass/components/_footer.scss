@@ -57,6 +57,9 @@
 
 .footer-join__social-list {
   margin-top: 20px;
+  @media screen and (max-width: 1199.9px) {
+    justify-content: center;
+  }
 }
 
 .footer__content {
@@ -119,19 +122,29 @@
   }
 }
 
-.join-container__join-social {
-  margin-top: 20px;
+.join-container {
+  @media screen and (max-width: 1199.9px) {
+    margin-bottom: 60px;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
 }
 
 .form-request {
-  margin-left: auto;
-  @include size(570px, 86px);
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
+  }
 
   &__request {
-    display: inline-block;
+    display: block;
     @include font-style(700, 14px, 1.14, uppercase);
     color: $header-color;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1199.9) {
+      text-align: center;
+    }
   }
 }
 
@@ -161,7 +174,6 @@
   }
   .footer-submit {
     display: block;
-    align-items: center;
 
     &__icon {
       margin-left: 10px;
