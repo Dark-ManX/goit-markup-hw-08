@@ -1,6 +1,6 @@
 // ----------Hero section---------------
 .hero {
-  padding: 200px 0;
+  padding: 118px 0;
   background-color: $background-color;
   text-align: center;
   background-image: linear-gradient(
@@ -9,15 +9,26 @@
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/background-image/bcg-img.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 1600px;
-  margin: 0 auto;
+
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 
   &__button {
     margin-top: 30px;
   }
 }
+
 @mixin title($fw, $fs, $lh, $ls, $tt, $color) {
   font-weight: $fw;
   font-size: $fs;
@@ -28,7 +39,12 @@
 }
 
 .hero-title {
-  @include title(900, 44px, 1.5, 0.06, uppercase, $header-color);
+  text-align: center;
+  @include title(900, 24px, 1.61, 0.06em, uppercase, $header-color);
+
+  @media screen and (min-width: 1200px) {
+    @include title(900, 44px, 1.5, 0.06, uppercase, $header-color);
+  }
 }
 
 @import "./_button.scss";
@@ -39,7 +55,7 @@
 
 // --------------Benefits------------
 
-.benefits--visually-hidden {
+.title--visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -53,16 +69,27 @@
 }
 
 .benefits__list {
-  width: 270px;
-  display: flex;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
+
 .benefits-item {
-  &:not(:last-child) {
-    margin-right: 30px;
+  width: 450px;
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 4 * 30px) / 4);
   }
 
   &__icon {
-    padding: 25px 100px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f5f4fa;
     border-radius: 4px;
     margin-bottom: 30px;
@@ -71,6 +98,10 @@
   &__header {
     @include title(700, 14px, 1.14, 0.03em, uppercase, $primary-color);
     margin-bottom: 10px;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
 
   &__description {
@@ -78,30 +109,65 @@
     margin-bottom: 10px;
   }
 }
+.benefits-list__item {
+  @media screen and (max-width: 767.9px) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199.9px) {
+    &:nth-child(-n + 2) {
+      margin-bottom: 30px;
+    }
+    &:nth-child(-2n + 3) {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
 
 // ----------------Work section-------------
 
 .work {
-  padding-top: 0;
+  @media screen and (max-width: 1199.9px) {
+    display: none;
+  }
 
-  &__title {
+  @media screen and (min-width: 1200px) {
+    padding-top: 0;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &-list__item:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+.title {
+  text-align: center;
+  @include title(700, 28px, 1.18, 0.03em, none, $primary-color);
+
+  @media screen and (min-width: 1200px) {
+    @include title(700, 36px, 1.17, 0.03em, none, $primary-color);
+    text-align: center;
+  }
+}
+
+.titles__margin {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 1200px) {
     margin-bottom: 50px;
   }
-
-  &__list {
-    display: flex;
-  }
-
-  &-list__item:not(:last-child) {
-    margin-right: 30px;
-  }
 }
-
-.title {
-  @include title(700, 36px, 1.17, 0.03em, none, $primary-color);
-  text-align: center;
-}
-
 .image-box {
   position: relative;
   z-index: 1;
@@ -135,13 +201,125 @@
 
 .team {
   background-color: $not-active-color;
-
-  &__list {
+}
+.team-list {
+  @media screen and (min-width: 768px) and (max-width: 1199.9px) {
     display: flex;
+    flex-wrap: wrap;
+
+    &__item:nth-child(-n + 2) {
+      margin-bottom: 30px;
+    }
+
+    &__item:nth-child(-2n + 3) {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 
-  &-list__social-list {
+  &__item {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+
+    @media screen and (max-width: 767.9px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__box {
+    padding: 30px 0 24px;
+
+    @media screen and (min-width: 1200px) {
+      padding: 30px 0;
+    }
+  }
+
+  &__social-list {
     display: flex;
-    margin-top: 10px;
+    margin-top: 16px;
+    justify-content: center;
+  }
+}
+.team-description {
+  &__name {
+    text-align: center;
+    margin-bottom: 10px;
+    @include title(500, 16px, 1.9, 0.03em, none, $primary-color);
+  }
+
+  &__position {
+    text-align: center;
+    @include title(400, 16px, 1.9, 0.03em, none, $secondary-color);
+  }
+}
+
+// --------------------Clients style--------------------
+
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (max-width: 767.9px) {
+    &__item:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+    &__item:nth-child(-n + 4) {
+      margin-bottom: 30px;
+    }
+  }
+}
+.clients-list__item {
+  height: 92px;
+  @media screen and (min-width: 480px) {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 2 * 30px) / 3);
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+    &:nth-child(-n + 3) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 5 * 30px) / 6);
+  }
+}
+
+.clients-link {
+  border: 1px solid $social-icon-color;
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &__icon {
+    fill: $secondary-color;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $interactive-color;
+
+    .clients-link__icon {
+      fill: $interactive-color;
+    }
   }
 }
