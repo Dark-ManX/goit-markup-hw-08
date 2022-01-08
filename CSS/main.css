@@ -691,6 +691,9 @@ body {
   .clients-list__item {
     width: calc((100% - 5 * 30px) / 6);
   }
+  .clients-list__item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .clients-link {
