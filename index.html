@@ -23,7 +23,13 @@
     <header class="header">
         <div class="container header__content">
             <a class="logo header__logo" href="./index.html"><span class="web">Web</span>Studio</a>
-            <div class="mobile-content mobile-content--is-shown">
+            <button class="menu-button menu-button--is-active" type="button" aria-label="menu button">
+                <svg class="menu-button__icons">
+                    <use class="menu-button__menu-icon" href="./images/sprite.svg#icon-menu"></use>
+                    <use class="menu-button__cross-icon" href="./images/sprite.svg#icon-close"></use>
+                </svg>
+            </button>
+            <div class="mobile-content">
                 <nav class="header-nav header__navigation">
                     <ul class="header-nav__list">
                         <li class="header-nav__item">

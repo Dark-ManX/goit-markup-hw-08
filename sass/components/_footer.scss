@@ -17,7 +17,7 @@
   padding: 60px 0;
 
   &__address-container {
-    @media screen and (max-width: 767.9px) {
+    @media screen and (max-width: 767px) {
       margin-bottom: 60px;
     }
     @media screen and (min-width: 768px) {
@@ -53,25 +53,25 @@
   &-social-item__link {
     background-color: rgba(#fff, 0.1);
   }
+
+  &__content {
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      align-items: baseline;
+      letter-spacing: 0.03em;
+    }
+  }
 }
 
 .footer-join__social-list {
   margin-top: 20px;
-  @media screen and (max-width: 1199.9px) {
+  @media screen and (max-width: 1199px) {
     justify-content: center;
   }
 }
 
-.footer__content {
-  @media screen and (min-width: 1200px) {
-    display: flex;
-    align-items: baseline;
-    letter-spacing: 0.03em;
-  }
-}
-
 .tablet-form {
-  @media screen and (min-width: 768px) and (max-width: 1199.9px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -123,7 +123,7 @@
 }
 
 .join-container {
-  @media screen and (max-width: 1199.9px) {
+  @media screen and (max-width: 1199px) {
     margin-bottom: 60px;
   }
   &__title {
@@ -132,19 +132,18 @@
 }
 
 .form-request {
-  @media screen and (min-width: 1200px) {
-    margin-left: auto;
-  }
-
   &__request {
     display: block;
     @include font-style(700, 14px, 1.14, uppercase);
     color: $header-color;
-    margin-bottom: 20px;
 
-    @media screen and (max-width: 1199.9) {
+    @media screen and (min-width: 480px) and (max-width: 1199px) {
       text-align: center;
+      margin-bottom: 20px;
     }
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: auto;
   }
 }
 
@@ -161,8 +160,8 @@
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.3);
 
-    @media screen and (max-width: 1199.9px) {
-      margin-bottom: 20px;
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto 20px;
     }
     @media screen and (min-width: 1200px) {
       margin-right: 12px;
@@ -174,6 +173,10 @@
   }
   .footer-submit {
     display: block;
+
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto;
+    }
 
     &__icon {
       margin-left: 10px;
