@@ -38,11 +38,7 @@ body {
 
 .container {
   padding: 0 15px;
-}
-@media screen and (min-width: 480px) {
-  .container {
-    max-width: 480px;
-  }
+  max-width: 480px;
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -79,6 +75,7 @@ body {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .header__navigation {
@@ -237,6 +234,12 @@ body {
   }
 }
 
+.menu-button .menu-button__menu-icon {
+  display: block;
+}
+.menu-button .menu-button__cross-icon {
+  display: none;
+}
 @media screen and (max-width: 767px) {
   .menu-button {
     width: 40px;
@@ -246,12 +249,7 @@ body {
     right: 10px;
     background-color: transparent;
     border: none;
-  }
-  .menu-button--is-active .menu-button__menu-icon {
-    display: none;
-  }
-  .menu-button--is-active .menu-button__cross-icon {
-    display: block;
+    cursor: pointer;
   }
 }
 @media screen and (min-width: 768px) {
@@ -274,6 +272,13 @@ body {
 }
 .menu-button__cross-icon {
   display: none;
+}
+
+.is-open .menu-button__menu-icon {
+  display: none;
+}
+.is-open .menu-button__cross-icon {
+  display: block;
 }
 
 .contacts-list__link {
