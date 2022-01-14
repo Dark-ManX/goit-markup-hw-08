@@ -32,7 +32,9 @@
   }
 
   &__navigation {
-    margin-bottom: 302px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 302px;
+    }
 
     @media screen and (min-width: 768px) {
       margin-right: 84px;
@@ -75,22 +77,46 @@
 
   &-contacts__item {
     &:not(:last-child) {
-      @media screen and (max-width: 1199px) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 64px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
         margin-bottom: 10px;
       }
       @media screen and (min-width: 1200px) {
         margin-right: 30px;
       }
     }
+    @media screen and (max-width: 767px) {
+      &:last-child {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  .tel-link {
+    @media screen and (max-width: 767px) {
+      @include font-style(
+        $primary-font,
+        500,
+        34px,
+        1.18,
+        0.02em,
+        $secondary-color
+      );
+    }
   }
 
   .header-nav {
     &__list {
-      display: block;
+      @media screen and (max-width: 767px) {
+        display: block;
+      }
       @media screen and (min-width: 768px) {
         @include position(baseline);
       }
     }
+
     &__item:not(:last-child) {
       margin-right: 50px;
     }
@@ -160,10 +186,50 @@
       transform: scaleX(1);
     }
   }
+
+  &-social {
+    display: flex;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &__link {
+      @include font-style(
+        $primary-font,
+        500,
+        18px,
+        1.22,
+        0.02em,
+        $interactive-color
+      );
+    }
+
+    &__item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 22px;
+      width: 1px;
+      background-color: $secondary-color;
+      bottom: 0;
+      right: -10px;
+    }
+  }
 }
 
 .mobile-content {
-  max-width: 480px;
+  z-index: 100;
+  @media screen and (min-width: 768px) {
+    @include position(center);
+  }
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -174,86 +240,77 @@
     }
   }
 }
-@media screen and (max-width: 767px) {
-  .menu-button ~ .mobile-content {
+
+.menu-button,
+.menu-button.menu-button--is-open {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.menu-button ~ .mobile-content {
+  @media screen and (max-width: 767px) {
     opacity: 0;
     width: 0;
     height: 0;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    @media screen and (min-width: 768px) {
-      @include position(center);
-      display: block;
-    }
   }
+}
 
-  .menu-button--is-open ~ .mobile-content {
+.menu-button--is-open ~ .mobile-content {
+  @media screen and (max-width: 767px) {
     display: block;
     position: absolute;
     top: 100%;
     left: 0%;
     opacity: 1;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: white;
     transform: scaleY(100%);
   }
+}
 
-  .menu-button {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+.menu-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 
+  .menu-button__menu-icon {
+    display: block;
+  }
+
+  .menu-button__cross-icon {
+    display: none;
+  }
+
+  &.menu-button--is-open {
     .menu-button__menu-icon {
+      display: none;
+    }
+    .menu-button__cross-icon {
       display: block;
     }
-
-    .menu-button__cross-icon {
-      display: none;
-    }
-
-    &.menu-button--is-open {
-      .menu-button__menu-icon {
-        display: none;
-      }
-      .menu-button__cross-icon {
-        display: block;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      display: none;
-    }
-
-    &__icons {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &__cross-icon {
-      display: none;
-    }
   }
-}
-.mobile-content {
-  @media screen and (min-width: 768px) {
-    @include position(center);
+
+  &__icons {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
-.menu-button {
-  @media screen and (min-width: 768px) {
+  &__cross-icon {
     display: none;
   }
 }
+
 .contacts-list {
   &__link {
     @include position(center);
@@ -300,6 +357,9 @@
 }
 
 .contacts-list__svg {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
   fill: $secondary-color;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-right: 8px;
@@ -313,6 +373,7 @@
     fill: $interactive-color;
   }
 }
+
 .letter-icon {
   width: 14px;
   height: 10px;
@@ -326,6 +387,7 @@
   width: 10px;
   height: 14px;
   @media screen and (min-width: 1200px) {
+    width: 10px;
     height: 16px;
   }
 }
