@@ -32,6 +32,8 @@
   }
 
   &__navigation {
+    margin-bottom: 302px;
+
     @media screen and (min-width: 768px) {
       margin-right: 84px;
     }
@@ -41,6 +43,10 @@
   }
 
   &__contacts {
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
     @media screen and (min-width: 768px) {
       display: block;
     }
@@ -58,6 +64,7 @@
       0.03em,
       $primary-color
     );
+
     @media screen and (min-width: 768px) {
       margin-right: 88px;
     }
@@ -79,7 +86,10 @@
 
   .header-nav {
     &__list {
-      @include position(baseline);
+      display: block;
+      @media screen and (min-width: 768px) {
+        @include position(baseline);
+      }
     }
     &__item:not(:last-child) {
       margin-right: 50px;
@@ -89,12 +99,23 @@
       @include font-style(
         $primary-font,
         500,
-        14px,
-        1.14,
+        40px,
+        1.17,
         0.02em,
         $primary-color
       );
-      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      @media screen and (min-width: 768px) {
+        @include font-style(
+          $primary-font,
+          500,
+          14px,
+          1.14,
+          0.02em,
+          $primary-color
+        );
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
     }
 
     &__link:hover,
@@ -105,8 +126,10 @@
     &__link--current {
       color: $interactive-color;
     }
+  }
 
-    &__link--current::after {
+  @media screen and (min-width: 768px) {
+    .header-nav__link--current::after {
       content: "";
       display: block;
       height: 4px;
@@ -144,6 +167,11 @@
 
   @media screen and (max-width: 767px) {
     display: none;
+    padding: 48px 83px 48px 40px;
+
+    .header-nav__item:not(:last-child) {
+      margin-bottom: 32px;
+    }
   }
 }
 @media screen and (max-width: 767px) {
@@ -174,6 +202,15 @@
   }
 
   .menu-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
     .menu-button__menu-icon {
       display: block;
     }
@@ -190,15 +227,6 @@
         display: block;
       }
     }
-
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 
     @media screen and (min-width: 768px) {
       display: none;
@@ -232,12 +260,37 @@
     @include font-style(
       $primary-font,
       500,
-      12px,
+      24px,
       1.17,
       0.02em,
       $secondary-color
     );
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (min-width: 768px) {
+      @include position(center);
+      @include font-style(
+        $primary-font,
+        500,
+        14px,
+        1.17,
+        0.02em,
+        $secondary-color
+      );
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media screen and (min-width: 1200px) {
+      @include position(center);
+      @include font-style(
+        $primary-font,
+        500,
+        12px,
+        1.14,
+        0.02em,
+        $secondary-color
+      );
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
     &:hover,
     &:focus {
