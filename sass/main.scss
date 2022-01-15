@@ -9,22 +9,22 @@
 
 // ------------Header style-----------
 
-@import "components/_header.scss";
-@import "components/_logo.scss";
+@import "components/header";
+@import "components/logo";
 
 // ------------Page (<main>) style-------------
 
-@import "components/_body-style.scss";
-@import "components/_social-list.scss";
+@import "components/body-style";
+@import "components/social-list";
 
 // ------------Modal window style---------------
 
-@import "components/_modal-window.scss";
+@import "components/modal-window";
 
 // ------------Footer style----------------
 
-@import "components/_footer.scss";
+@import "components/footer";
 
 // -------------Portfolio style-------------
 
-@import "components/_portfolio.scss";
+@import "components/portfolio";
