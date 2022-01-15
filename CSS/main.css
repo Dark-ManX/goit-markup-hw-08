@@ -235,7 +235,7 @@ body {
     border-radius: 2px;
     background-color: #2196f3;
     position: relative;
-    bottom: -30px;
+    bottom: -32px;
     -webkit-animation-name: animate-after;
             animation-name: animate-after;
     -webkit-animation-duration: 500ms;
