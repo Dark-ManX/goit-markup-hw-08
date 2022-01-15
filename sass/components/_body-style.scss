@@ -3,6 +3,7 @@
   padding: 118px 0;
   background-color: $background-color;
   text-align: center;
+  width: 100%;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -22,17 +23,6 @@
         rgba(47, 48, 58, 0.4)
       ),
       url(../../images/background-image/bcg-img@2x.jpg);
-  }
-
-  @media screen and (min-width: 480px) {
-    max-width: 480px;
-  }
-  @media screen and (min-width: 768px) {
-    max-width: 768px;
-  }
-  @media screen and (min-width: 1200px) {
-    max-width: 1600px;
-    margin: 0 auto;
   }
 
   &__button {
@@ -89,11 +79,11 @@
 .benefits-item {
   width: 450px;
   @media screen and (min-width: 768px) {
-    width: calc((100% - 30px) / 2);
+    width: 354px;
   }
 
   @media screen and (min-width: 1200px) {
-    width: calc((100% - 4 * 30px) / 4);
+    width: 270px;
   }
 
   &__icon {
@@ -122,7 +112,9 @@
 }
 .benefits-list__item {
   @media screen and (max-width: 767px) {
-    margin-bottom: 30px;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     &:nth-child(-n + 2) {
@@ -214,6 +206,11 @@
   background-color: $not-active-color;
 }
 .team-list {
+  @media screen and (max-width: 767px) {
+    &__item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     display: flex;
     flex-wrap: wrap;
@@ -240,11 +237,11 @@
     width: 100%;
 
     @media screen and (min-width: 768px) {
-      width: calc((100% - 30px) / 2);
+      width: 354px;
     }
 
-    @media screen and (max-width: 767px) {
-      margin-bottom: 30px;
+    @media screen and (min-width: 1200px) {
+      width: 270px;
     }
   }
 
