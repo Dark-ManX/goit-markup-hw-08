@@ -6,9 +6,9 @@
         const expanded =
             menuBtnRef.getAttribute("aria-expanded") === "true" || false;
 
-        menuBtnRef.classList.toggle("menu-button--is-open");
+        menuBtnRef.classList.toggle("menu-button--is-hidden");
         menuBtnRef.setAttribute("artia-expanded", !expanded);
 
-        mobileMenuRef.classList.togle("menu-button--is-open");
+        mobileMenuRef.classList.togle("menu-button--is-hidden");
     });
 })();

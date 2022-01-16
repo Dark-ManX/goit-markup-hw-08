@@ -77,19 +77,25 @@
   &__item {
     width: 100%;
 
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      max-width: 450px;
+      margin-bottom: 30px;
+    }
+
     @media screen and (min-width: 768px) {
-      width: calc(100% / 2 - 30px);
+      max-width: calc(100% / 2 - 30px);
       margin-top: 30px;
       margin-left: 30px;
       background: $header-color;
     }
 
     @media screen and (min-width: 1200px) {
-      width: calc(100% / 3 - 30px);
+      max-width: calc(100% / 3 - 30px);
     }
   }
 
   &__link {
+    width: 100%;
     color: inherit;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -131,9 +137,10 @@
 
   &-jpg {
     display: block;
-    width: auto;
+    width: 100%;
   }
   &-description {
+    width: 100%;
     border: 1px solid #eeeeee;
     padding: 20px 24px;
     border-top: none;

@@ -20,9 +20,6 @@
     @media screen and (max-width: 767px) {
       margin-bottom: 60px;
     }
-    @media screen and (min-width: 768px) {
-      margin-right: 165px;
-    }
 
     @media screen and (min-width: 1200px) {
       margin-right: 70px;
@@ -71,11 +68,17 @@
 }
 
 .tablet-form {
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+
   @media screen and (min-width: 768px) {
     display: flex;
     align-items: baseline;
-    justify-content: center;
-    margin-bottom: 60px;
+
+    @media screen and (max-width: 1199px) {
+      justify-content: space-around;
+    }
   }
 }
 .address {
@@ -123,9 +126,6 @@
 }
 
 .join-container {
-  @media screen and (max-width: 1199px) {
-    margin-bottom: 60px;
-  }
   &__title {
     margin-bottom: 20px;
   }
