@@ -249,6 +249,7 @@
 
 .menu-button,
 .menu-button.menu-button--is-hiden {
+  z-index: 101;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -267,9 +268,9 @@
 .menu-button ~ .mobile-content {
   @media screen and (max-width: 767px) {
     display: block;
-    position: absolute;
-    top: 100%;
-    left: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
     opacity: 1;
     height: auto;
     background-color: white;
